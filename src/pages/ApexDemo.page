@@ -1,0 +1,31 @@
+<apex:page controller="AccountDataRetriveCls" sidebar="false">
+  <apex:form >
+      <table>
+          <tr>
+              <td>
+                  <apex:outputText Value="Name Field"></apex:outputText>
+              </td>
+                  <td>
+                      <apex:inputText id="Txt"/>
+                  </td>
+                  <td>
+                          <apex:commandButton Value="Submit"/>
+                  </td>
+          </tr>
+      </table>
+<apex:pageBlock title="Account Data">
+
+    <apex:pageblockTable value="{!lstAccounts}" var="acc">
+        <apex:column headerValue="Account Name">
+            <apex:outputtext value="{!acc.name}"></apex:outputtext>
+                  </apex:column>
+                     <apex:column headerValue="Account Phone">
+                        <apex:outputtext value="{!acc.phone}"></apex:outputtext>
+                          <td>
+                              <apex:inputCheckbox />
+                          </td>
+                  </apex:column>
+            </apex:pageblockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
